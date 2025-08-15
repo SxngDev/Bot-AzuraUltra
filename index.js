@@ -1,3 +1,14 @@
+require('./server');
+
+// AutoPing para mantener el bot despierto
+const fetch = require("node-fetch");
+
+setInterval(() => {
+    fetch("https://36c62932-7121-471a-880c-9b46680dedb2-00-73tftai7epls.riker.replit.dev/")
+        .then(res => console.log("AutoPing:", res.status))
+        .catch(err => console.log("Error AutoPing:", err));
+}, 5 * 60 * 1000); // cada 5 minutos
+
 (async () => {
 let canalId = ["120363266665814365@newsletter"];  
 let canalNombre = ["👾 AZURA ULTRA 2.0 BOT 👾"]
